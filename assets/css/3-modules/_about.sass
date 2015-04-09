@@ -1,0 +1,90 @@
+.face-lockup
+	max-width: 800px
+	+display(flex)
+	margin: 0 auto
+	+align-items(center)
+	+justify-content(space-between)
+
+	.face-img
+		+size(200px)
+		max-width: 200px
+		border-radius: 50%
+		background: url(/assets/img/1.jpg) center
+		background-size: cover
+		order: 3
+
+	[class^="icon-"]
+		+size(100px)
+		background: $bgcolor
+		border-radius: 50%
+
+		path
+			fill: $accent
+
+		&.icon-pencil
+			order: 1
+		&.icon-mouse
+			order: 2
+		&.icon-browser
+			order: 4
+		&.icon-video
+			order: 5
+
+@media screen and (max-width: 650px)
+	.face-lockup
+		display: block
+
+		div
+			display: inline-block
+
+		.face-img
+			display: block
+			background-position: center center
+			background-repeat: no-repeat
+			width: auto
+			margin-bottom: 30px
+			margin: auto
+
+		[class^="icon-"]
+			margin: 10px
+
+.blurb
+	max-width: 620px
+	padding: 0 15px	
+	margin: 50px auto
+	font-size: 24px
+	text-align: center
+	font-weight: 300
+
+.skills-lockup
+	max-width: 600px
+	margin: 100px auto
+	padding-left: 100px
+	color: #999
+	+clearfix
+
+	.skill-unit
+		width: 300px
+		float: left
+
+	.skill-icons
+		font-size: 0
+		margin: 2px 0 30px
+
+		span
+			display: inline-block
+			+size(10px)
+			background-color: white
+			margin-right: 5px
+			border-radius: 50%
+			border: 2px solid $accent
+
+		@for $i from 1 through 10
+			&.skill-#{$i} span:nth-child(n+#{$i+1})
+				@extend %skill-color
+				border: 2px solid lightgray
+
+%skill-color
+	background: white
+
+	

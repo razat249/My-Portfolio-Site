@@ -1,0 +1,21 @@
+# Site-setting
+title: Artists theme
+description: Thinker // Designer // Teacher
+email: razat247@gmail.com
+
+bg-img: hero-bg.jpg
+
+avatar: 1.jpg
+
+blurb: <p></p>
+
+# Build settings
+
+markdown: kramdown
+permalink: pretty
+
+port: 3000
+
+sass:
+  sass_dir: assets/css
+  style: :nested
